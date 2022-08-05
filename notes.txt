@@ -1,0 +1,625 @@
+
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   3 minutes ago       Up 3 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   3 minutes ago       Up 3 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   3 minutes ago       Up 3 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   3 minutes ago       Up 4 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ clear
+
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   5 minutes ago       Up 5 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker ls
+docker: 'ls' is not a docker command.
+See 'docker --help'
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   6 minutes ago       Up 6 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+bd640ec06663        nginx:latest        "/docker-entrypoint."   6 minutes ago       Up 6 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker run -d nginx:latest
+cd9d9978038a7cb889748dfcab99ef402e28ffaa5a8ac5717fc05c09a8dd4d44
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+cd9d9978038a        nginx:latest        "/docker-entrypoint."   1 second ago        Up 6 seconds        80/tcp              practical_ramanujan
+bd640ec06663        nginx:latest        "/docker-entrypoint."   7 minutes ago       Up 7 minutes        80/tcp              fervent_murdock
+
+navis@navispc MINGW64 ~
+$ docker stop cd9d9978038a
+cd9d9978038a
+
+navis@navispc MINGW64 ~
+$ docker stop bd640ec06663
+bd640ec06663
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+navis@navispc MINGW64 ~
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              670dcc86b69d        10 days ago         142MB
+hello-world         latest              feb5d9fea6a5        10 months ago       13.3kB
+
+navis@navispc MINGW64 ~
+$ docker run -d -p 8080:80 nginx:latest
+65277d7ba3f79e8b51b714ec5878df2a5582373107368951c2003b4e07ca5a23
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+65277d7ba3f7        nginx:latest        "/docker-entrypoint."   8 seconds ago       Up 13 seconds       0.0.0.0:8080->80/tcp   zealous_euclid
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+65277d7ba3f7        nginx:latest        "/docker-entrypoint."   12 seconds ago      Up 17 seconds       0.0.0.0:8080->80/tcp   zealous_euclid
+
+navis@navispc MINGW64 ~
+$ docker-machine ip
+192.168.99.100
+
+navis@navispc MINGW64 ~
+$ docker stop 65277d7ba3f7
+65277d7ba3f7
+
+navis@navispc MINGW64 ~
+$ docker run -d -p 3000:80 nginx:latest
+eea0b159f6b906f9e9b5099da5206d339072d6929723b13c98eda0782f8843ed
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+eea0b159f6b9        nginx:latest        "/docker-entrypoint."   39 seconds ago      Up 43 seconds       0.0.0.0:3000->80/tcp   affectionate_stonebraker
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+eea0b159f6b9        nginx:latest        "/docker-entrypoint."   43 seconds ago      Up 47 seconds       0.0.0.0:3000->80/tcp   affectionate_stonebraker
+
+navis@navispc MINGW64 ~
+$ docker stop eea0b159f6b9
+eea0b159f6b9
+
+navis@navispc MINGW64 ~
+$ docker run -d -p 3000:80 -p 8080:80 nginx:latest
+3367db461ddc93be3dd4d91146227808a5e99ddeb06f512b8775f93ee9a375c0
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+3367db461ddc        nginx:latest        "/docker-entrypoint."   46 seconds ago      Up 51 seconds       0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   sleepy_turing
+
+navis@navispc MINGW64 ~
+$ docker stop sleepy_turing
+sleepy_turing
+
+navis@navispc MINGW64 ~
+$ docker start sleepy_turing
+sleepy_turing
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+3367db461ddc        nginx:latest        "/docker-entrypoint."   2 minutes ago       Up 31 seconds       0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   sleepy_turing
+
+navis@navispc MINGW64 ~
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+3367db461ddc        nginx:latest        "/docker-entrypoint."   2 minutes ago       Up 35 seconds       0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   sleepy_turing
+
+navis@navispc MINGW64 ~
+$ docker stop 3367db461ddc
+3367db461ddc
+
+navis@navispc MINGW64 ~
+$ docker ls
+docker: 'ls' is not a docker command.
+See 'docker --help'
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+navis@navispc MINGW64 ~
+$ docker ps --help
+
+Usage:  docker ps [OPTIONS]
+
+List containers
+
+Options:
+  -a, --all             Show all containers (default shows just running)
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Pretty-print containers using a Go template
+  -n, --last int        Show n last created containers (includes all
+                        states) (default -1)
+  -l, --latest          Show the latest created container (includes all
+                        states)
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only display numeric IDs
+  -s, --size            Display total file sizes
+
+navis@navispc MINGW64 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                            PORTS               NAMES
+3367db461ddc        nginx:latest        "/docker-entrypoint."   4 minutes ago       Exited (137) About a minute ago                       sleepy_turing
+eea0b159f6b9        nginx:latest        "/docker-entrypoint."   6 minutes ago       Exited (137) 5 minutes ago                            affectionate_stonebraker
+65277d7ba3f7        nginx:latest        "/docker-entrypoint."   10 minutes ago      Exited (137) 7 minutes ago                            zealous_euclid
+cd9d9978038a        nginx:latest        "/docker-entrypoint."   21 minutes ago      Exited (0) 12 minutes ago                             practical_ramanujan
+bd640ec06663        nginx:latest        "/docker-entrypoint."   29 minutes ago      Exited (0) 12 minutes ago                             fervent_murdock
+4c7984a36db4        hello-world         "/hello"                 40 minutes ago      Exited (0) 40 minutes ago                             peaceful_pike
+80b252798232        hello-world         "/hello"                 40 minutes ago      Exited (0) 40 minutes ago                             zealous_zhukovsky
+2cfd8f54f430        hello-world         "/hello"                 41 minutes ago      Exited (0) 41 minutes ago                             determined_curran
+
+navis@navispc MINGW64 ~
+$ docker rm 3367db461ddc
+3367db461ddc
+
+navis@navispc MINGW64 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
+eea0b159f6b9        nginx:latest        "/docker-entrypoint."   7 minutes ago       Exited (137) 6 minutes ago                       affectionate_stonebraker
+65277d7ba3f7        nginx:latest        "/docker-entrypoint."   11 minutes ago      Exited (137) 8 minutes ago                       zealous_euclid
+cd9d9978038a        nginx:latest        "/docker-entrypoint."   23 minutes ago      Exited (0) 13 minutes ago                        practical_ramanujan
+bd640ec06663        nginx:latest        "/docker-entrypoint."   30 minutes ago      Exited (0) 13 minutes ago                        fervent_murdock
+4c7984a36db4        hello-world         "/hello"                 41 minutes ago      Exited (0) 41 minutes ago                        peaceful_pike
+80b252798232        hello-world         "/hello"                 41 minutes ago      Exited (0) 41 minutes ago                        zealous_zhukovsky
+2cfd8f54f430        hello-world         "/hello"                 42 minutes ago      Exited (0) 42 minutes ago                        determined_curran
+
+navis@navispc MINGW64 ~
+$ docker rm eea0b159f6b9
+eea0b159f6b9
+
+navis@navispc MINGW64 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                       PORTS               NAMES
+65277d7ba3f7        nginx:latest        "/docker-entrypoint."   12 minutes ago      Exited (137) 9 minutes ago                       zealous_euclid
+cd9d9978038a        nginx:latest        "/docker-entrypoint."   23 minutes ago      Exited (0) 14 minutes ago                        practical_ramanujan
+bd640ec06663        nginx:latest        "/docker-entrypoint."   31 minutes ago      Exited (0) 14 minutes ago                        fervent_murdock
+4c7984a36db4        hello-world         "/hello"                 42 minutes ago      Exited (0) 42 minutes ago                        peaceful_pike
+80b252798232        hello-world         "/hello"                 42 minutes ago      Exited (0) 42 minutes ago                        zealous_zhukovsky
+2cfd8f54f430        hello-world         "/hello"                 43 minutes ago      Exited (0) 43 minutes ago                        determined_curran
+
+navis@navispc MINGW64 ~
+$ docker ps -aq
+65277d7ba3f7
+cd9d9978038a
+bd640ec06663
+4c7984a36db4
+80b252798232
+2cfd8f54f430
+
+navis@navispc MINGW64 ~
+$ docker rm $(docker ps -aq)
+65277d7ba3f7
+cd9d9978038a
+bd640ec06663
+4c7984a36db4
+80b252798232
+2cfd8f54f430
+
+navis@navispc MINGW64 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+navis@navispc MINGW64 ~
+$ docker run -d -p 8080:80 -p 3000:80 nginx:latest
+acb0c6ac7bb9742881f0aa0316f7eae23ec99e506c5167b58d0386a363161ee3
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+acb0c6ac7bb9        nginx:latest        "/docker-entrypoint."   1 second ago        Up 6 seconds        0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   quirky_gauss
+
+navis@navispc MINGW64 ~
+$ docker rm $(docker ps -aq)
+Error response from daemon: You cannot remove a running container acb0c6ac7bb9742881f0aa0316f7eae23ec99e506c5167b58d0386a363161ee3. Stop the container before attempting removal or force remove
+
+navis@navispc MINGW64 ~
+$ docker rm -f $(docker ps -aq)
+acb0c6ac7bb9
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+navis@navispc MINGW64 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+
+navis@navispc MINGW64 ~
+$ docker run -d -p 8080:80 -p 3000:80 nginx:latest
+894d324c830443c901134a598ac594d891ae590cb6e7e3d763014536745bf89d
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+894d324c8304        nginx:latest        "/docker-entrypoint."   2 seconds ago       Up 6 seconds        0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   sad_solomon
+
+navis@navispc MINGW64 ~
+$ docker rm -f $(docker ps -aq)
+894d324c8304
+
+navis@navispc MINGW64 ~
+$ docker run --name website -d -p 8080:80 -p 3000:80 nginx:latest
+04495e8cdc3cabcc667be23a699277e1be74c5cafa12ea9938dbb05513db72bb
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+04495e8cdc3c        nginx:latest        "/docker-entrypoint."   3 seconds ago       Up 7 seconds        0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   website
+
+navis@navispc MINGW64 ~
+$ docker stop website
+website
+
+navis@navispc MINGW64 ~
+$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS                     PORTS               NAMES
+04495e8cdc3c        nginx:latest        "/docker-entrypoint."   About a minute ago   Exited (0) 3 seconds ago                       website
+
+navis@navispc MINGW64 ~
+$ docker start website
+website
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                                        NAMES
+04495e8cdc3c        nginx:latest        "/docker-entrypoint."   About a minute ago   Up 17 seconds       0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   website
+
+navis@navispc MINGW64 ~
+$ docker run -d -p 9000:80 --name wesite-two nginx:latest
+ce81ad020477338bc322a295b93ee01cb821f3b37197f1afdd833b5b6125a9e4
+
+navis@navispc MINGW64 ~
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED                  STATUS              PORTS                                        NAMES
+ce81ad020477        nginx:latest        "/docker-entrypoint."   Less than a second ago   Up 3 seconds        0.0.0.0:9000->80/tcp                         wesite-two
+04495e8cdc3c        nginx:latest        "/docker-entrypoint."   3 minutes ago            Up About a minute   0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp   website
+
+navis@navispc MINGW64 ~
+$ docker ps --format="ID\\t{{.ID}}\nName\\t{{.Names}}\nImage\\t{{.Image}}\nPorts\\t{{.Ports}}\nCommand\\t{{.Command}}\nCreated\\t{{.CreatedAt}}\nStatus\\t{{.Status}}\n"
+ID      wesite-two77
+Image   0.0.0.0:9000->80/tcp
+Command 2022-07-30 12:51:05 +0530 IST
+Statusd 04495e8cdc3c
+Name    website
+Image   0.0.0.0:3000->80/tcp, 0.0.0.0:8080->80/tcp
+Command 2022-07-30 12:47:47 +0530 IST
+Statusd Up 5 minutes
+
+
+navis@navispc MINGW64 ~
+$ docker ps --format="ID\\t{{.ID}}\nName\\t{{.Names}}\nImage\\t{{.Image}}\nPorts\\t{{.Ports}}\nCommand\\t{{.Command}}\nCreated\\t{{.CreatedAt}}\nStatus\\t{{.Status}}\n\n"
+ID      wesite-two77
+Image   0.0.0.0:9000->80/tcp
+Command 2022-07-30 12:51:05 +0530 IST
+Statusd 04495e8cdc3c
+Name    website
+Image   nginx:latest
+Ports   "/docker-entrypoint." 0.0.0.0:8080->80/tcp
+Created Up 5 minutes2:47:47 +0530 IST
+Status
+
+
+navis@navispc MINGW64 ~
+$ docker ps --format="ID\\t{{.ID}}\nName\\t{{.Names}}\nImage\\t{{.Image}}\nPorts\\t{{.Ports}}\nCommand\\t{{.Command}}\nCreated\\t{{.CreatedAt}}\nStatus\\t{{.Status}}\n\n"
+ID      wesite-two77
+Image   0.0.0.0:9000->80/tcp
+Command 2022-07-30 12:51:05 +0530 IST
+Statusd 04495e8cdc3c
+Name    website
+Image   nginx:latest
+Ports   "/docker-entrypoint." 0.0.0.0:8080->80/tcp
+Created Up 6 minutes2:47:47 +0530 IST
+Status
+
+
+navis@navispc MINGW64 ~
+$ docker ps --format="ID\\t{{.ID}}\nName\\t{{.Names}}\nImage\\t{{.Image}}\nPorts\\t{{.Ports}}\nCommand\\t{{.Command}}\nCreated\\t{{.CreatedAt}}\nStatus\\t{{.Status}}\n\n"
+ID      wesite-two77
+Image   0.0.0.0:9000->80/tcp
+Command 2022-07-30 12:51:05 +0530 IST
+Statusd 04495e8cdc3c
+Name    website
+Image   nginx:latest
+Ports   "/docker-entrypoint." 0.0.0.0:8080->80/tcp
+Created Up 6 minutes2:47:47 +0530 IST
+Status
+
+
+navis@navispc MINGW64 ~
+$ FORMAT="ID\\t{{.ID}}\nName\\t{{.Names}}\nImage\\t{{.Image}}\nPorts\\t{{.Ports}}\nCommand\\t{{.Command}}\nCreated\\t{{.CreatedAt}}\nStatus\\t{{.Status}}\n\n"
+
+navis@navispc MINGW64 ~
+$ docker ps --format=$FORMAT
+ID      wesite-two77
+Image   0.0.0.0:9000->80/tcp
+Command 2022-07-30 12:51:05 +0530 IST
+Statusd 04495e8cdc3c
+Name    website
+Image   nginx:latest
+Ports   "/docker-entrypoint." 0.0.0.0:8080->80/tcp
+Created Up 7 minutes2:47:47 +0530 IST
+Status
+
+
+navis@navispc MINGW64 ~
+$ PWD
+/c/Users/navis
+
+navis@navispc MINGW64 ~
+$ pwd
+/c/Users/navis
+
+https://www.youtube.com/watch?v=bhBSlnQcq2k&t=199
+49:00 / 4:17:59 Volumes
+
+
+
+kubeadm join 192.168.0.108:6443 --token 0ib3y6.o400s0mu2borvpnk \
+  --discovery-token-ca-cert-hash sha256:646ae5f3a489932f81dc701cd2fc04d264099803cef66da5783fc9619f86ac6c 
+
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker run -p 8080:80 --name website -v /media/bearly/Storage/docker/website:/usr/share/nginx/html:ro  -d nginx:latest
+de301aacd72d43c91313fa57d58d9aed3dd41337c7ad37f97c619d9259aa60c9
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker exec -it website bash
+
+early@w1:/media/bearly/Storage/docker/website$ sudo docker rm -f website
+website
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker run -d -p 8080:80 -v /media/bearly/Storage/docker/website/:/usr/share/nginx/html --name website nginx:latest
+dfcfdb948e9d153db24a485cd43a0129a17d0741b6f09f4199728bd1e766bad3
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker exec -it website bash
+
+root@dfcfdb948e9d:/# cd /usr/share/nginx/html/
+root@dfcfdb948e9d:/usr/share/nginx/html# ls
+index.html
+root@dfcfdb948e9d:/usr/share/nginx/html# touch about.html
+root@dfcfdb948e9d:/usr/share/nginx/html# vi about.html 
+bash: vi: command not found
+root@dfcfdb948e9d:/usr/share/nginx/html# "<h1>About us</h1>" > about.html 
+bash: <h1>About us</h1>: No such file or directory
+root@dfcfdb948e9d:/usr/share/nginx/html# "<h1>About us</h1>" >> about.html 
+bash: <h1>About us</h1>: No such file or directory
+root@dfcfdb948e9d:/usr/share/nginx/html# "About us" >> about.html 
+bash: About us: command not found
+root@dfcfdb948e9d:/usr/share/nginx/html# "About us" > about.html 
+bash: About us: command not found
+root@dfcfdb948e9d:/usr/share/nginx/html# exit
+exit
+
+https://www.youtube.com/watch?v=bhBSlnQcq2k&t=2108s
+1:00:49 / 4:17:59
+Volumes Between Containers
+
+Google - bootstrap single page template
+https://github.com/startbootstrap/startbootstrap-grayscale
+
+sharing files between containers.
+bearly@w1:/media/bearly/Storage/repo$ sudo docker run --name website-copy -d -p 8081:80 --volumes-from website nginx:latest
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker rm -f website
+website
+bearly@w1:/media/bearly/Storage/docker/website$ docker ps -a
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1": dial unix /var/run/docker.sock: connect: permission denied
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+bcf5bf32952d   nginx:latest   "/docker-entrypoint.…"   21 minutes ago   Up 21 minutes   0.0.0.0:8081->80/tcp, :::8081->80/tcp   website-copy
+bearly@w1:/media/bearly/Storage/docker/website$ docker images ls
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json?filters=%7B%22reference%22%3A%7B%22ls%22%3Atrue%7D%7D": dial unix /var/run/docker.sock: connect: permission denied
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker images ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker images ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker images ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker images
+REPOSITORY               TAG              IMAGE ID       CREATED         SIZE
+website                  latest           90dc521e6c97   2 minutes ago   143MB
+<none>                   <none>           1c4d6fd6aab8   3 days ago      245MB
+react-laravel_frontend   latest           898211ef078b   3 days ago      329MB
+nginx                    latest           670dcc86b69d   2 weeks ago     142MB
+composer                 1.10             ba8738815957   2 weeks ago     198MB
+hello-world              latest           feb5d9fea6a5   10 months ago   13.3kB
+node                     13.10.1-alpine   8db74ce813f8   2 years ago     114MB
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker image ls
+REPOSITORY               TAG              IMAGE ID       CREATED         SIZE
+website                  latest           90dc521e6c97   2 minutes ago   143MB
+<none>                   <none>           1c4d6fd6aab8   3 days ago      245MB
+react-laravel_frontend   latest           898211ef078b   3 days ago      329MB
+nginx                    latest           670dcc86b69d   2 weeks ago     142MB
+composer                 1.10             ba8738815957   2 weeks ago     198MB
+hello-world              latest           feb5d9fea6a5   10 months ago   13.3kB
+node                     13.10.1-alpine   8db74ce813f8   2 years ago     114MB
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker run --name website -p 8080:80 -d website:latest
+6d00019d5eda24e228e49a0e055389efed91c722d6cb74963aaa0951afba88ed
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+6d00019d5eda   website:latest   "/docker-entrypoint.…"   20 seconds ago   Up 17 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   website
+bcf5bf32952d   nginx:latest     "/docker-entrypoint.…"   23 minutes ago   Up 23 minutes   0.0.0.0:8081->80/tcp, :::8081->80/tcp   website-copy
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+6d00019d5eda   website:latest   "/docker-entrypoint.…"   44 seconds ago   Up 41 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   website
+bcf5bf32952d   nginx:latest     "/docker-entrypoint.…"   24 minutes ago   Up 24 minutes   0.0.0.0:8081->80/tcp, :::8081->80/tcp   website-copy
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker rm -f 6d00019d5eda
+6d00019d5eda
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker rm -f bcf5bf32952d
+bcf5bf32952d
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker run --name website -p 8080:80 -d website:latest
+313f419fe38a85054af444c06232ba33148385f8cfaee836da2d2e8491c9347b
+
+bearly@w1:/media/bearly/Storage/docker/website$ sudo docker ps -a
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+313f419fe38a   website:latest   "/docker-entrypoint.…"   8 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   website
+
+bearly@w1:/media/bearly/Storage/docker/website$ cd ..
+bearly@w1:/media/bearly/Storage/docker$ mkdir user-service
+bearly@w1:/media/bearly/Storage/docker$ mkdir user-service-api
+bearly@w1:/media/bearly/Storage/docker$ cd user-service-api/
+bearly@w1:/media/bearly/Storage/docker/user-service-api$ node --version
+v16.16.0
+bearly@w1:/media/bearly/Storage/docker/user-service-api$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (user-service-api) 
+version: (1.0.0) 
+description: 
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC) 
+About to write to /media/bearly/Storage/docker/user-service-api/package.json:
+
+{
+  "name": "user-service-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+bearly@w1:/media/bearly/Storage/docker/user-service-api$ ll
+total 1
+drwxrwxrwx 1 bearly bearly 160 Aug  5 16:53 ./
+drwxrwxrwx 1 bearly bearly 504 Aug  5 16:52 ../
+-rwxrwxrwx 1 bearly bearly 212 Aug  5 16:53 package.json*
+bearly@w1:/media/bearly/Storage/docker/user-service-api$ npm install --save express
+
+added 57 packages, and audited 58 packages in 4s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+bearly@w1:/media/bearly/Storage/docker/user-service-api$ 
+ *  History restored 
+
+bearly@w1:/media/bearly/Storage/docker/user-service-api$ 
+
++++Dockerfile+++
+FROM node:latest
+WORKDIR /app
+ADD . .
+RUN npm install
+CMD node index.js
++++Dockerfile+++
+
+updated docker file to use caching
++++Dockerfile+++
+FROM node:latest
+WORKDIR /app
+ADD package*.json ./
+RUN npm install
+ADD . .
+CMD node index.js
++++Dockerfile+++
+
++++ .dockerignore +++
+node_modules
+Dockerfile
+.git
++++ .dockerignore +++
+
+
+$ sudo docker rm -f user-api
+user-api
+
+$ sudo docker build -t user-service-api:latest .
+Sending build context to Docker daemon  45.57kB
+Step 1/6 : FROM node:latest
+ ---> 3adbe565b1f0
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 2aa733422652
+Step 3/6 : ADD package*.json ./
+ ---> 9b2a3804d7d6
+Step 4/6 : RUN npm install
+ ---> Running in 48c6b0954692
+
+added 57 packages, and audited 58 packages in 1s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice 
+npm notice New minor version of npm available! 8.15.0 -> 8.16.0
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.16.0>
+npm notice Run `npm install -g npm@8.16.0` to update!
+npm notice 
+Removing intermediate container 48c6b0954692
+ ---> a1d63176ece1
+Step 5/6 : ADD . .
+ ---> 9769091cc379
+Step 6/6 : CMD node index.js
+ ---> Running in 3512725e6a63
+Removing intermediate container 3512725e6a63
+ ---> e52e611bf550
+Successfully built e52e611bf550
+Successfully tagged user-service-api:latest
+
+$ sudo docker run -d -p 3000:3000 --name user-api user-service-api:latest
+b2395d865672aaa268519cca183dccab21aebacc8d05b7775426ad4fbe8f303a
+
+$ 
